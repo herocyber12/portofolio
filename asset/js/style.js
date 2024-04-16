@@ -1,5 +1,6 @@
 // JavaScript Document
-function myFunction() {
+
+	function myFunction() {
 		var x = document.getElementById("myLinks");
 		if (x.style.display === "block") {
 			x.style.display = "none";
@@ -7,6 +8,24 @@ function myFunction() {
 			x.style.display = "block";
 		}
 	}
+		
+	gsap.registerPlugin(ScrollTrigger);
+	
+	var classes = ['.project','#kontak','#pengalaman','#pengalaman__ormawa','#skill','#kejuaraan'];
+	
+	classes.forEach(function(className){
+		gsap.to(className, {
+			opacity: 1,
+			duration: 0.8, // Durasi animasi (dalam detik)
+			scrollTrigger: {
+				trigger: className, // Trigger untuk animasi (bisa elemen atau string selector)
+				start: 'top 90%', // Memulai animasi ketika trigger mencapai 80% viewport
+				toggleActions: 'play none', // Tindakan yang diambil saat trigger masuk dan keluar viewport
+//      			scrub: true,
+      			ease: 'power1.inOut' // Efek scroll yang halus
+			}
+		});
+	});
 	document.getElementById('hamburger-menu').addEventListener('click',function(){
 		this.classList.toggle('open');
 	});
@@ -21,20 +40,3 @@ function myFunction() {
 		}
 	});
 	
-	gsap.registerPlugin(ScrollTrigger);
-	
-	var classes = ['.project','.kontak'];
-	
-	classes.forEach(function(className){
-		gsap.to(className, {
-			opacity: 1,
-			duration: 0.8, // Durasi animasi (dalam detik)
-			scrollTrigger: {
-				trigger: className, // Trigger untuk animasi (bisa elemen atau string selector)
-				start: 'top 90%', // Memulai animasi ketika trigger mencapai 80% viewport
-				toggleActions: 'play none reverse none', // Tindakan yang diambil saat trigger masuk dan keluar viewport
-//      			scrub: true,
-      			ease: 'power1.inOut' // Efek scroll yang halus
-			}
-		});
-	});
