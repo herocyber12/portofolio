@@ -1,0 +1,31 @@
+/* Rectangle 21 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 509px;
+height: 240px;
+left: 191px;
+top: 2255px;
+
+border: 3px solid #FFFFFF;
+
+
+/* Freelance Web Developer April 2021 - Sekarang */
+
+position: absolute;
+width: 317px;
+height: 173px;
+left: 287px;
+top: 2288px;
+
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 52px;
+line-height: 50px;
+/* or 96% */
+text-align: center;
+
+color: #FFFFFF;
+
