@@ -1,4 +1,14 @@
 // JavaScript Document
+window.addEventListener('load', function() {
+  var loadingScreen = document.getElementById('loading-screen');
+  var content = document.getElementById('top');
+  
+  // Menghilangkan loading screen
+  loadingScreen.style.display = 'none';
+  
+  // Menampilkan konten
+  content.style.display = 'block';
+});
 
 	function myFunction() {
 		var x = document.getElementById("myLinks");
