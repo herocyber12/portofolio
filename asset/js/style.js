@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 		
 	gsap.registerPlugin(ScrollTrigger);
 	
-	var classes = ['.project','#kontak','#pengalaman','#pengalaman__ormawa','#skill','#kejuaraan'];
+	var classes = ['#project','#kontak','#pengalaman','#pengalaman__ormawa','#skill','#kejuaraan'];
 	
 	classes.forEach(function(className){
 		gsap.to(className, {
