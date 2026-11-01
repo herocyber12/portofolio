@@ -1,4 +1,20 @@
-export const experience = [
+type ExperienceLink = {
+    label: string;
+    href: string;
+};
+
+type ExperienceEntry = {
+    key: string;
+    company: string;
+    role: string;
+    duration: { from: string; to: string };
+    description: string;
+    technologies: string[];
+    keyAchievement: string[];
+    websites?: ExperienceLink[];
+};
+
+export const experience: ExperienceEntry[] = [
     {
         key: "pt_transformasi_data_digital",
         company: "PT Transformasi Data Digital",
@@ -7,7 +23,15 @@ export const experience = [
             from: "Nov 2024",
             to: "Present"
         },
-        description: "Maintained and developed client websites focused on top-up systems and digital transaction flows using PHP Native OOP, Laravel, and MySQL.",
+        websites: [
+            { label: "x45.co.id", href: "https://x45.co.id" },
+            { label: "nevalis.id", href: "https://nevalis.id" },
+            { label: "mitranevalis.com", href: "https://mitranevalis.com" },
+            { label: "x45reseller.com", href: "https://x45reseller.com" },
+            { label: "portalnevalis.id", href: "https://portalnevalis.id" },
+            { label: "mrtopup.id", href: "https://mrtopup.id" },
+        ],
+        description: "Maintained and developed client websites for top-up services and digital transactions using PHP (Native OOP and Laravel) and MySQL.",
         technologies: [
             "PHP Native",
             "Laravel",
@@ -17,9 +41,10 @@ export const experience = [
             "Payment Gateway"
         ],
         keyAchievement: [
-            "Monitored ad bot performance and ensured smooth client transaction pipelines.",
-            "Participated in API development for client integrations and maintained API documentation as requirements and implementations evolved.",
-            "Integrated third-party APIs, including Coda and domain provisioning, into client top-up websites.",
+            "Monitored ad bot performance and kept client transaction pipelines running smoothly.",
+            "Contributed to API development for new client features and maintained API documentation as requirements and implementations evolved.",
+            "Integrated third-party APIs, including Coda and domain provisioning, into client top-up websites as new features were required.",
+            "Implemented atomic database operations across transaction workflows and high-precision decimal calculations to prevent data anomalies and maintain financial accuracy.",
             "Established structured discussions with cross-functional teams, reducing miscommunication."
         ]
     },
@@ -31,7 +56,10 @@ export const experience = [
             from: "August 2025",
             to: "Present"
         },
-        description: "Built and maintained the backend using Laravel, Golang, MySQL, and REST APIs for an electricity token and digital top-up platform serving 2,301+ customers.",
+        websites: [
+            { label: "toktik.id", href: "https://toktik.id" },
+        ],
+        description: "Electricity token and digital top-up platform serving 2,301+ customers.",
         technologies: [
             "Laravel",
             "Golang",
@@ -46,12 +74,13 @@ export const experience = [
             "API Integration"
         ],
         keyAchievement: [
-            "Migrated high-traffic product and transaction endpoints from Laravel to Go, increasing tested throughput from about 50 to 200 requests per second on the same 2-core, 2 GB server, with resource use reaching about 95% at peak load.",
-            "Implemented clean architecture with repository and service layers, raw SQL, token-based authentication and authorization, and gRPC callbacks between Laravel and Go services.",
-            "Handled asynchronous payment gateway and digital product aggregator callbacks, including delayed or missing callbacks, with idempotent transaction processing.",
-            "Cached product data and authenticated user profiles as JSON in Redis with TTL-based expiry to reduce MySQL reads.",
-            "Added automated unit tests to CI/CD before Docker builds and deployment to Alibaba Cloud.",
-            "Built the TokTik Agent portal with Next.js, integrating Go APIs for withdrawal and redemption flows."
+            "Built and maintained the backend using Laravel, Golang, MySQL, and REST APIs.",
+            "Migrated high-traffic product and transaction endpoints from Laravel to Go, raising tested throughput from ~50 to ~200 req/s on the same 2-core, 2 GB server; resource utilization reached ~95% at 200 req/s.",
+            "Implemented repository and service layers, raw SQL, token-based authentication and authorization middleware, and gRPC callbacks between Laravel and Go; documented service architecture and API interactions.",
+            "Integrated a payment gateway and digital product aggregator; implemented idempotent callback handling with transaction order IDs and status validation to safely process delayed or missing callbacks and prevent duplicate payments or top-ups.",
+            "Cached product data and authenticated user profiles as serialized JSON in Redis with TTL-based expiry, reducing MySQL reads.",
+            "Added automated unit tests to the CI/CD pipeline before Docker image builds and automated deployment to Alibaba Cloud.",
+            "Built TokTik's Agent portal with Next.js, integrating Go APIs for withdrawal and redemption flows."
         ]
     },
     {
@@ -70,10 +99,10 @@ export const experience = [
             "Team Leadership"
         ],
         keyAchievement: [
-            "Optimized the database across 23,000+ merchants, 5 million+ transactions, and 212,041 users through indexing and query optimization.",
             "Managed data and monitored infrastructure stability.",
-            "Planned and delegated tasks based on team capacity and skill.",
-            "Coordinated with the admin team on user and tenant issues, improving report turnaround and team collaboration."
+            "Optimized database performance across 23,000+ merchants, 5 million+ transactions, and 212,041 users through indexing and query optimization.",
+            "Planned and delegated tasks based on team capacity and skills, fostering collaboration and improving issue-report turnaround.",
+            "Coordinated with the admin team to resolve user and tenant reports promptly."
         ]
     },
     {

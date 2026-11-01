@@ -1,4 +1,4 @@
-import { Folder } from "lucide-react";
+import { ExternalLink, Folder } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { experience } from "@/lib/experience";
 
@@ -40,6 +40,19 @@ export function Experience() {
                         <div className="mt-1 text-sm text-white/60">{activeExperience.company}</div>
                     </header>
                     <p className="text-sm leading-6 text-white/75">{activeExperience.description}</p>
+                    {activeExperience.websites && <div>
+                        <h3 className="mb-2 text-xs font-semibold uppercase text-white/45">Selected platforms</h3>
+                        <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                            {activeExperience.websites.map((website) => (
+                                <li key={website.href}>
+                                    <a href={website.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-emerald-200/80 underline decoration-white/15 underline-offset-4 transition-colors hover:text-emerald-100 hover:decoration-emerald-200/50">
+                                        {website.label}
+                                        <ExternalLink size={12} aria-hidden="true" />
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>}
                     <div>
                         <h3 className="mb-2 text-xs font-semibold uppercase text-white/45">Highlights</h3>
                         <ul className="flex flex-col gap-2">
