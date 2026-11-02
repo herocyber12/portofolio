@@ -53,7 +53,7 @@ export const experience: ExperienceEntry[] = [
         company: "TokTik Indonesia",
         role: "Software Engineer (Side Project)",
         duration: {
-            from: "Aug 2025",
+            from: "August 2025",
             to: "Present"
         },
         websites: [
@@ -78,9 +78,9 @@ export const experience: ExperienceEntry[] = [
         ],
         keyAchievement: [
             "Built and maintained the backend using Laravel, Golang, MySQL, and REST APIs.",
-            "Driven by cost efficiency, migrated high-traffic transaction endpoints from Laravel to Go after exhausting Laravel optimizations with query tuning, caching, and OPcache. Increased throughput from ~50 to ~200 req/s on the same 2-core, 2 GB server at ~95% utilization, without requiring costly vertical scaling.",
-            "Applied clean architecture with repository and service layers, raw SQL, and token-based authentication and authorization middleware; connected Laravel and Go through gRPC callbacks and documented the service architecture and API interactions.",
-            "Integrated a payment gateway and digital product aggregator, handling asynchronous callbacks including delayed or missing follow-up events. Used transaction order IDs and status validation for idempotent processing and to prevent duplicate payments and top-ups.",
+            "Driven by infrastructure cost efficiency, migrated high-traffic transaction and product API endpoints serving the toktik.id frontend from Laravel to Go after exhausting Laravel optimizations with query tuning, caching, and OPcache. Retained Laravel for authentication and the admin dashboard, and increased system throughput by 300%, from ~50 to ~200 req/s.",
+            "Implemented clean architecture for the Go service using the repository pattern, service layer, and raw SQL, with token-based authentication and authorization middleware. Connected the Laravel and Go services through gRPC callbacks and documented the service architecture and API interactions.",
+            "Integrated payment gateways and digital product aggregators, implementing idempotent callback handling via transaction order IDs and status validation to safely process asynchronous events, manage delayed callbacks, and strictly prevent duplicate payments.",
             "Cached product data and authenticated user profiles as serialized JSON in Redis with TTL-based expiry, reducing MySQL reads.",
             "Added automated unit tests to the CI/CD pipeline, running them before Docker image builds and automated deployment to Alibaba Cloud.",
             "Built TokTik's Agent portal with Next.js, integrating Go APIs for withdrawal and redemption flows."
