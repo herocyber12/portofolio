@@ -31,7 +31,7 @@ export const experience: ExperienceEntry[] = [
             { label: "portalnevalis.id", href: "https://portalnevalis.id" },
             { label: "mrtopup.id", href: "https://mrtopup.id" },
         ],
-        description: "Maintained and developed client websites for top-up services and digital transactions using PHP (Native OOP and Laravel) and MySQL.",
+        description: "Maintained and developed client websites focused on top-up systems and digital transaction flows using PHP (Native OOP and Laravel) and MySQL.",
         technologies: [
             "PHP Native",
             "Laravel",
@@ -44,7 +44,7 @@ export const experience: ExperienceEntry[] = [
             "Monitored ad bot performance and kept client transaction pipelines running smoothly.",
             "Contributed to API development for new client features and maintained API documentation as requirements and implementations evolved.",
             "Integrated third-party APIs, including Coda and domain provisioning, into client top-up websites as new features were required.",
-            "Implemented atomic database operations across transaction workflows and high-precision decimal calculations to prevent data anomalies and maintain financial accuracy.",
+            "Implemented end-to-end atomic database operations and high-precision decimal calculations to prevent data anomalies and ensure financial accuracy.",
             "Established structured discussions with cross-functional teams, reducing miscommunication."
         ]
     },
@@ -53,13 +53,13 @@ export const experience: ExperienceEntry[] = [
         company: "TokTik Indonesia",
         role: "Software Engineer (Side Project)",
         duration: {
-            from: "August 2025",
+            from: "Aug 2025",
             to: "Present"
         },
         websites: [
             { label: "toktik.id", href: "https://toktik.id" },
         ],
-        description: "Electricity token and digital top-up platform serving 2,301+ customers.",
+        description: "Built and maintained the backend for an electricity token and digital top-up platform serving 2,301+ customers and growing.",
         technologies: [
             "Laravel",
             "Golang",
@@ -70,16 +70,19 @@ export const experience: ExperienceEntry[] = [
             "Raw SQL",
             "Docker",
             "GitHub Actions",
+            "Alibaba Cloud",
+            "Unit Testing",
+            "Next.js",
             "Payment Gateway",
             "API Integration"
         ],
         keyAchievement: [
             "Built and maintained the backend using Laravel, Golang, MySQL, and REST APIs.",
-            "Migrated high-traffic product and transaction endpoints from Laravel to Go, raising tested throughput from ~50 to ~200 req/s on the same 2-core, 2 GB server; resource utilization reached ~95% at 200 req/s.",
-            "Implemented repository and service layers, raw SQL, token-based authentication and authorization middleware, and gRPC callbacks between Laravel and Go; documented service architecture and API interactions.",
-            "Integrated a payment gateway and digital product aggregator; implemented idempotent callback handling with transaction order IDs and status validation to safely process delayed or missing callbacks and prevent duplicate payments or top-ups.",
+            "Driven by cost efficiency, migrated high-traffic transaction endpoints from Laravel to Go after exhausting Laravel optimizations with query tuning, caching, and OPcache. Increased throughput from ~50 to ~200 req/s on the same 2-core, 2 GB server at ~95% utilization, without requiring costly vertical scaling.",
+            "Applied clean architecture with repository and service layers, raw SQL, and token-based authentication and authorization middleware; connected Laravel and Go through gRPC callbacks and documented the service architecture and API interactions.",
+            "Integrated a payment gateway and digital product aggregator, handling asynchronous callbacks including delayed or missing follow-up events. Used transaction order IDs and status validation for idempotent processing and to prevent duplicate payments and top-ups.",
             "Cached product data and authenticated user profiles as serialized JSON in Redis with TTL-based expiry, reducing MySQL reads.",
-            "Added automated unit tests to the CI/CD pipeline before Docker image builds and automated deployment to Alibaba Cloud.",
+            "Added automated unit tests to the CI/CD pipeline, running them before Docker image builds and automated deployment to Alibaba Cloud.",
             "Built TokTik's Agent portal with Next.js, integrating Go APIs for withdrawal and redemption flows."
         ]
     },
