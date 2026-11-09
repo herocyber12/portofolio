@@ -18,7 +18,7 @@ export const experience: ExperienceEntry[] = [
     {
         key: "pt_transformasi_data_digital",
         company: "PT Transformasi Data Digital",
-        role: "Software Engineer (Full-time)",
+        role: "Software Engineer (Fulltime)",
         duration: {
             from: "Nov 2024",
             to: "Present"
@@ -41,17 +41,17 @@ export const experience: ExperienceEntry[] = [
             "Payment Gateway"
         ],
         keyAchievement: [
-            "Monitored ad bot performance and kept client transaction pipelines running smoothly.",
+            "Monitored and troubleshot production transaction systems, investigating API and database issues affecting transaction processing.",
             "Contributed to API development for new client features and maintained API documentation as requirements and implementations evolved.",
             "Integrated third-party APIs, including Coda and domain provisioning, into client top-up websites as new features were required.",
-            "Implemented end-to-end atomic database operations and high-precision decimal calculations to prevent data anomalies and ensure financial accuracy.",
+            "Implemented atomic database transactions and decimal-based monetary calculations to maintain financial consistency.",
             "Established structured discussions with cross-functional teams, reducing miscommunication."
         ]
     },
     {
         key: "toktik",
         company: "TokTik Indonesia",
-        role: "Software Engineer (Side Project)",
+        role: "Software Engineer (Co-Founder)",
         duration: {
             from: "August 2025",
             to: "Present"
@@ -59,11 +59,12 @@ export const experience: ExperienceEntry[] = [
         websites: [
             { label: "toktik.id", href: "https://toktik.id" },
         ],
-        description: "Built and maintained the backend for an electricity token and digital top-up platform serving 2,301+ customers and growing.",
+        description: "Electricity token and digital top-up platform serving 2,729+ active users as of November 2026.",
         technologies: [
             "Laravel",
             "Golang",
             "Gin",
+            "k6",
             "MySQL",
             "Redis",
             "gRPC",
@@ -77,10 +78,11 @@ export const experience: ExperienceEntry[] = [
             "API Integration"
         ],
         keyAchievement: [
-            "Built and maintained the backend using Laravel, Golang, MySQL, and REST APIs.",
-            "Driven by infrastructure cost efficiency, migrated high-traffic transaction and product API endpoints serving the toktik.id frontend from Laravel to Go after exhausting Laravel optimizations with query tuning, caching, and OPcache. Retained Laravel for authentication and the admin dashboard, and increased system throughput by 300%, from ~50 to ~200 req/s.",
-            "Implemented clean architecture for the Go service using the repository pattern, service layer, and raw SQL, with token-based authentication and authorization middleware. Connected the Laravel and Go services through gRPC callbacks and documented the service architecture and API interactions.",
-            "Integrated payment gateways and digital product aggregators, implementing idempotent callback handling via transaction order IDs and status validation to safely process asynchronous events, manage delayed callbacks, and strictly prevent duplicate payments.",
+            "Co-founded TokTik and built the backend using Laravel, Golang, MySQL, and REST APIs.",
+            "Driven by infrastructure cost efficiency, migrated high-traffic transaction and product API endpoints to Go after exhausting Laravel optimizations (query tuning, caching, and OPcache). Load-tested with k6 and implemented request concurrency limits to prevent server overload under peak load.",
+            "Implemented clean architecture for the Go service using the repository pattern, service layer, and raw SQL.",
+            "Connected the Laravel and Go services via gRPC for callbacks, implemented token-based authentication middleware, and documented API interactions for system maintenance.",
+            "Integrated payment gateways and digital product aggregators, implementing idempotent callback processing using transaction order IDs and status validation to safely handle asynchronous payment events and prevent duplicate transactions.",
             "Cached product data and authenticated user profiles as serialized JSON in Redis with TTL-based expiry, reducing MySQL reads.",
             "Added automated unit tests to the CI/CD pipeline, running them before Docker image builds and automated deployment to Alibaba Cloud.",
             "Built TokTik's Agent portal with Next.js, integrating Go APIs for withdrawal and redemption flows."
@@ -94,7 +96,7 @@ export const experience: ExperienceEntry[] = [
             from: "Mar 2025",
             to: "Aug 2025"
         },
-        description: "Led maintenance, optimization, and development of the Solo Raya Great Sale event website using Laravel and MySQL.",
+        description: "Collaborated on maintenance, optimization, and development of the Solo Raya Great Sale event website using Laravel and MySQL.",
         technologies: [
             "Laravel",
             "MySQL",
@@ -104,7 +106,7 @@ export const experience: ExperienceEntry[] = [
         keyAchievement: [
             "Managed data and monitored infrastructure stability.",
             "Optimized database performance across 23,000+ merchants, 5 million+ transactions, and 212,041 users through indexing and query optimization.",
-            "Planned and delegated tasks based on team capacity and skills, fostering collaboration and improving issue-report turnaround.",
+            "Collaborated within the development team to ensure timely delivery of features, optimizations, and bug fixes.",
             "Coordinated with the admin team to resolve user and tenant reports promptly."
         ]
     },
