@@ -31,7 +31,7 @@ export function AboutMe({ onOpenApp }: AboutMeProps) {
                     </a>
                 </div>
                 <p className="max-w-full text-sm leading-6 text-white/70">
-                    Software Engineer with 2+ years of experience building and maintaining production-grade web applications, REST APIs, and transaction-driven systems using PHP/Laravel and Golang. Experienced in backend development, third-party integrations, MySQL query optimization, authentication, service migration, and CI/CD, with hands-on ownership from development through production. Comfortable contributing across the stack with JavaScript, Vue.js, React.js, and Next.js, collaborating with cross-functional teams, and working independently on technical problems. Strong interest in building reliable systems, improving performance, and taking ownership of system architecture.
+                    Software Engineer focused on backend development using PHP/Laravel and Golang. Experienced in API development, database management (MySQL &amp; PostgreSQL), payment gateway integration, and server setup &amp; deployment. Capable of working across the stack with modern frontend frameworks (Vue.js, React.js, Next.js). My ability to unravel complex problems, simplify the findings, and draw clear conclusions has become my advantage in technical problem solving and improving system efficiency. I take full ownership in my role, enjoy collaborating in teams, and am comfortable working independently while always looking to grow and contribute more in a dynamic work environment.
                 </p>
             </div>
 
