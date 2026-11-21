@@ -1,5 +1,5 @@
 "use client";
-import { UserRound, BriefcaseBusiness, FolderKanban, Code2, Mail, Info } from "lucide-react";
+import { Handshake, UserRound, BriefcaseBusiness, FolderKanban, Code2, Mail, Info } from "lucide-react";
 type StartMenuProps = {
     visible?: boolean;
     openApp: (app: string) => void;
@@ -11,6 +11,7 @@ export function StartMenu({ visible, openApp, onOpenConcept }: StartMenuProps) {
 
     const apps = [
         { id: "about", label: "About Me", icon: UserRound },
+        { id: "help", label: "How I Can Help", icon: Handshake },
         { id: "experience", label: "Experience", icon: BriefcaseBusiness },
         { id: "projects", label: "Projects", icon: FolderKanban },
         { id: "skills", label: "Technical Skills", icon: Code2 },

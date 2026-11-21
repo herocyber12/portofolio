@@ -7,10 +7,11 @@ type BottomBarProps = {
 };
 
 import { useEffect, useState } from "react";
-import { AppWindow, BriefcaseBusiness, FolderKanban, Mail, UserRound } from "lucide-react";
+import { AppWindow, Handshake, BriefcaseBusiness, FolderKanban, Mail, UserRound } from "lucide-react";
 
 const dockApps = [
     { id: "about", label: "About", icon: UserRound },
+    { id: "help", label: "How I Can Help", icon: Handshake },
     { id: "experience", label: "Experience", icon: BriefcaseBusiness },
     { id: "projects", label: "Projects", icon: FolderKanban },
     { id: "contact", label: "Contact", icon: Mail },

@@ -9,6 +9,7 @@ import { Experience } from "@/components/Widget/ExperienceView";
 import { Projects } from "@/components/Widget/Projects";
 import { Skills } from "@/components/Widget/Skills";
 import { Contact } from "@/components/Widget/Contact";
+import { HowICanHelp } from "@/components/Widget/HowICanHelp";
 import { CardWindow } from "@/components/CardWindow";
 import { ConceptDialog } from "@/components/ConceptDialog";
 import { ResearchLoadingScreen } from "@/components/ResearchLoadingScreen";
@@ -22,6 +23,7 @@ const appTitles: Record<string, string> = {
     projects: "CRF / DOSSIER 03 · PROJECTS",
     skills: "CRF / DOSSIER 04 · SKILLS",
     contact: "CRF / DOSSIER 05 · CONTACT",
+    help: "CRF / DOSSIER 06 · HOW I CAN HELP",
 };
 
 export function DesktopUi() {
@@ -29,7 +31,7 @@ export function DesktopUi() {
     const [startMenuVisible, setStartMenuVisible] = useState<boolean>(false);
     const [conceptVisible, setConceptVisible] = useState(false);
     const [conceptPromptVisible, setConceptPromptVisible] = useState(false);
-    const [openApps, setOpenApps] = useState(["about"]);
+    const [openApps, setOpenApps] = useState(["about", "help"]);
     const [activeApp, setActiveApp] = useState("about");
     const [viewport, setViewport] = useState<{ width: number; height: number; safeAreaTop: number; safeAreaBottom: number } | null>(null);
     const [minimizedApps, setMinimizedApps] = useState<string[]>([]);
@@ -56,7 +58,26 @@ export function DesktopUi() {
         };
     };
 
-    const getDefaultRect = (index: number): WindowRect => ({
+    // On wide screens, About Me and How I Can Help open side by side.
+    const sideBySideApps = ["about", "help"];
+    const isWideViewport = screen.width >= 1024;
+    const getDefaultRect = (index: number, app?: string): WindowRect => {
+        const sideIndex = app ? sideBySideApps.indexOf(app) : -1;
+        if (isWideViewport && sideIndex !== -1) {
+            const gap = 16;
+            const width = Math.min(720, Math.floor((screen.width - gap * 3) / 2));
+            const startX = Math.max(gap, Math.floor((screen.width - (width * 2 + gap)) / 2));
+            return {
+                x: startX + sideIndex * (width + gap),
+                y: Math.max(12, Math.min(48, screen.height - windowHeight - 100)),
+                width,
+                height: windowHeight,
+            };
+        }
+        return getCascadeRect(index);
+    };
+
+    const getCascadeRect = (index: number): WindowRect => ({
         x: isCompactViewport ? 8 : Math.max(12, Math.min(72 + index * 22, screen.width - windowWidth - 12)),
         y: isCompactViewport ? 8 : Math.max(12, Math.min(48 + index * 20, screen.height - windowHeight - 100)),
         width: windowWidth,
@@ -139,13 +160,13 @@ export function DesktopUi() {
 
     const toggleMaximize = (app: string, index: number) => {
         if (maximizedApps.includes(app)) {
-            const restoreRect = fitWindowRect(restoreRects[app] ?? getDefaultRect(index));
+            const restoreRect = fitWindowRect(restoreRects[app] ?? getDefaultRect(index, app));
             setWindowRects((current) => ({ ...current, [app]: restoreRect }));
             setMaximizedApps((current) => current.filter((item) => item !== app));
             return;
         }
 
-        const currentRect = fitWindowRect(windowRects[app] ?? getDefaultRect(index));
+        const currentRect = fitWindowRect(windowRects[app] ?? getDefaultRect(index, app));
         setRestoreRects((current) => ({ ...current, [app]: currentRect }));
         setWindowRects((current) => ({
             ...current,
@@ -161,6 +182,7 @@ export function DesktopUi() {
             case "projects": return <Projects />;
             case "skills": return <Skills />;
             case "contact": return <Contact />;
+            case "help": return <HowICanHelp onOpenApp={openApp} />;
             default: return null;
         }
     };
@@ -173,7 +195,7 @@ export function DesktopUi() {
                         const isMaximized = maximizedApps.includes(app);
                         const rect = isMaximized
                             ? { x: 0, y: 0, width: screen.width, height: workspaceHeight }
-                            : fitWindowRect(windowRects[app] ?? getDefaultRect(index));
+                            : fitWindowRect(windowRects[app] ?? getDefaultRect(index, app));
 
                         return (
                             <Rnd
