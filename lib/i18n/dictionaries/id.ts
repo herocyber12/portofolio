@@ -10,6 +10,10 @@ export const id: Dictionary = {
         switchTo: "Switch to English",
         names: { en: "English", id: "Bahasa Indonesia" },
     },
+    seo: {
+        documentLabel: "Profil Krisna Joko Purjianto (versi teks)",
+        otherLanguage: "Read in English",
+    },
     months: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
     present: "Sekarang",
     apps: {

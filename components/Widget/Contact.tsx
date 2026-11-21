@@ -1,13 +1,8 @@
 "use client";
 
-import { BriefcaseBusiness, CodeXml, Mail, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { contactItems } from "@/lib/contact";
 import { useI18n } from "@/lib/i18n/provider";
-
-const contactItems = [
-    { label: "Email", value: "krisnajokop@gmail.com", href: "mailto:krisnajokop@gmail.com", icon: Mail },
-    { label: "LinkedIn", value: "linkedin.com/in/krisna-jp", href: "https://www.linkedin.com/in/krisna-jp", icon: BriefcaseBusiness },
-    { label: "GitHub", value: "github.com/herocyber12", href: "https://github.com/herocyber12", icon: CodeXml },
-];
 
 export function Contact() {
     const { t } = useI18n();

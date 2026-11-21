@@ -8,6 +8,10 @@ export const en = {
         switchTo: "Ganti ke Bahasa Indonesia",
         names: { en: "English", id: "Bahasa Indonesia" },
     },
+    seo: {
+        documentLabel: "Krisna Joko Purjianto's profile (text version)",
+        otherLanguage: "Baca dalam Bahasa Indonesia",
+    },
     months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     present: "Present",
     apps: {

@@ -2,6 +2,7 @@
 
 import { Download } from "lucide-react";
 import { useI18n } from "@/lib/i18n/provider";
+import { assetPath, CV_PATH } from "@/lib/site";
 
 type AboutMeProps = {
     onOpenApp: (app: string) => void;
@@ -26,7 +27,7 @@ export function AboutMe({ onOpenApp }: AboutMeProps) {
                         <h1 className="text-3xl font-semibold">Krisna Joko Purjianto</h1>
                     </div>
                     <a
-                        href="/asset/cv/CV_Krisna_Joko_Purjianto_Software_Engineer_for_public.pdf"
+                        href={assetPath(CV_PATH)}
                         download="Krisna_Joko_Purjianto_CV.pdf"
                         className="inline-flex h-10 shrink-0 items-center gap-2 border border-emerald-200/30 bg-emerald-300/10 px-3 text-sm font-medium text-emerald-100 transition-colors hover:border-emerald-200/60 hover:bg-emerald-300/15 focus-visible:outline-2 focus-visible:outline-emerald-200"
                     >

@@ -1,7 +1,8 @@
 import { ExternalLink, Folder } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { experience } from "@/lib/experience";
-import { formatMonth, useI18n } from "@/lib/i18n/provider";
+import { useI18n } from "@/lib/i18n/provider";
+import { formatDuration as formatRange } from "@/lib/i18n/format";
 
 export function Experience() {
     const { t } = useI18n();
@@ -9,7 +10,7 @@ export function Experience() {
     const activeExperience = experience.find((item) => item.key === activeKey);
     const activeIndex = experience.findIndex((item) => item.key === activeKey);
     const activeText = activeExperience && t.experience.entries[activeExperience.key];
-    const formatDuration = (duration: { from: string; to: string | null }) => `${formatMonth(t, duration.from)} – ${formatMonth(t, duration.to)}`;
+    const formatDuration = (duration: { from: string; to: string | null }) => formatRange(t, duration);
     const activeButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {

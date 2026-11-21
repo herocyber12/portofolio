@@ -2,7 +2,8 @@ import { Folder } from "lucide-react";
 import { useState } from "react";
 import { experience as Data } from '@/lib/experience';
 import { CardWindow } from "@/components/CardWindow";
-import { formatMonth, useI18n } from "@/lib/i18n/provider";
+import { useI18n } from "@/lib/i18n/provider";
+import { formatMonth } from "@/lib/i18n/format";
 
 // Legacy explorer view (not rendered); kept in sync with the i18n data shape.
 export function Experience() {

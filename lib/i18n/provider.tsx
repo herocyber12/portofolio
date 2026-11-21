@@ -43,9 +43,3 @@ export function useI18n() {
     if (!context) throw new Error("useI18n must be used inside I18nProvider");
     return context;
 }
-
-export function formatMonth(t: Dictionary, value: string | null) {
-    if (!value) return t.present;
-    const [year, month] = value.split("-");
-    return `${t.months[Number(month) - 1]} ${year}`;
-}
