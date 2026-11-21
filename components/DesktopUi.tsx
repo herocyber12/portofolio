@@ -14,19 +14,12 @@ import { CardWindow } from "@/components/CardWindow";
 import { ConceptDialog } from "@/components/ConceptDialog";
 import { ResearchLoadingScreen } from "@/components/ResearchLoadingScreen";
 import { ArrowUpRight, Info, X } from "lucide-react";
+import { useI18n } from "@/lib/i18n/provider";
 
 type WindowRect = { x: number; y: number; width: number; height: number };
 
-const appTitles: Record<string, string> = {
-    about: "CRF / DOSSIER 01 · PROFILE",
-    experience: "CRF / DOSSIER 02 · EXPERIENCE",
-    projects: "CRF / DOSSIER 03 · PROJECTS",
-    skills: "CRF / DOSSIER 04 · SKILLS",
-    contact: "CRF / DOSSIER 05 · CONTACT",
-    help: "CRF / DOSSIER 06 · HOW I CAN HELP",
-};
-
 export function DesktopUi() {
+    const { t } = useI18n();
     const [researchComplete, setResearchComplete] = useState(false);
     const [startMenuVisible, setStartMenuVisible] = useState<boolean>(false);
     const [conceptVisible, setConceptVisible] = useState(false);
@@ -223,7 +216,7 @@ export function DesktopUi() {
                                 }))}
                             >
                                 <CardWindow
-                                    title={appTitles[app]}
+                                    title={t.apps[app as keyof typeof t.apps]?.title ?? ""}
                                     onClose={() => closeApp(app)}
                                     onMinimize={() => minimizeApp(app)}
                                     onToggleMaximize={() => toggleMaximize(app, index)}
@@ -237,9 +230,9 @@ export function DesktopUi() {
                 ))}
             </main>
 
-            <div aria-label="CRF restricted candidate dossier, file CRF-01" className="pointer-events-none absolute left-4 z-5 hidden flex-col border-l-2 border-rose-400/80 bg-black/35 py-1 pl-2.5 pr-3 font-mono backdrop-blur-sm md:flex" style={{ top: "calc(0.75rem + var(--safe-area-top))" }}>
-                <span className="text-[12px] font-semibold tracking-[0.14em] text-rose-200">CANDIDATE RESEARCH FEDERATION // RESTRICTED</span>
-                <span className="mt-0.5 text-[13px] tracking-[0.08em] text-white/55">CANDIDATE DOSSIER · FILE CRF-01</span>
+            <div aria-label={t.desktop.badgeLabel} className="pointer-events-none absolute left-4 z-5 hidden flex-col border-l-2 border-rose-400/80 bg-black/35 py-1 pl-2.5 pr-3 font-mono backdrop-blur-sm md:flex" style={{ top: "calc(0.75rem + var(--safe-area-top))" }}>
+                <span className="text-[12px] font-semibold tracking-[0.14em] text-rose-200">{t.desktop.badgeTitle}</span>
+                <span className="mt-0.5 text-[13px] tracking-[0.08em] text-white/55">{t.desktop.badgeFile}</span>
             </div>
 
             <div className="absolute left-4 lg:left-2/6" style={{ bottom: "calc(5rem + var(--safe-area-bottom))" }}>
@@ -268,20 +261,20 @@ export function DesktopUi() {
                     <div className="flex items-start gap-3 p-4">
                         <Info className="mt-0.5 shrink-0 text-emerald-200/75" size={18} />
                         <div className="min-w-0 flex-1">
-                            <p className="text-sm font-medium">New to this desktop?</p>
-                            <p className="mt-1 text-xs leading-5 text-white/55">See why this portfolio is framed as a candidate dossier.</p>
+                            <p className="text-sm font-medium">{t.desktop.conceptPromptTitle}</p>
+                            <p className="mt-1 text-xs leading-5 text-white/55">{t.desktop.conceptPromptBody}</p>
                             <button
                                 type="button"
                                 onClick={openConcept}
                                 className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-emerald-200 transition-colors hover:text-emerald-100 focus-visible:outline-2 focus-visible:outline-emerald-200"
                             >
-                                About the concept <ArrowUpRight size={14} />
+                                {t.desktop.conceptPromptAction} <ArrowUpRight size={14} />
                             </button>
                         </div>
                         <button
                             type="button"
-                            aria-label="Dismiss concept introduction"
-                            title="Dismiss"
+                            aria-label={t.desktop.conceptPromptDismissLabel}
+                            title={t.desktop.conceptPromptDismiss}
                             onClick={() => setConceptPromptVisible(false)}
                             className="-mr-1 -mt-1 flex size-7 shrink-0 items-center justify-center text-white/45 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-emerald-200"
                         >
